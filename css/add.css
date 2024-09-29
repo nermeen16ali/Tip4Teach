@@ -1,0 +1,108 @@
+.copyright img {
+    width: 20px;
+    margin-right: 3px;
+}
+.socials{
+    display: flex;
+    gap: 12px;
+}
+.socials a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49px;
+    height: 49px;
+    border-radius: 34px;
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: background-color 0.2s ease-in-out;
+}
+.socials a:hover{
+    background-color: var(--yellow-color);
+}
+.socials a img{
+    width: 24px;
+}
+/* ************************************************* search for ************************************************ */
+.navbar-collapse .log-btn{
+    width: fit-content;
+}
+.navbar {
+    padding: 0;
+}
+.navbar-toggler {
+    padding: 0;
+}
+.navbar-brand img {
+    width: 84px;
+}
+.sm-nav-logo {
+    /* position: absolute;
+    left: 40px; */
+}
+/* max-width: 768px; */
+.teacher .dedcription-btn {
+    padding: 8px 38px 8px 12px;
+    overflow: hidden;
+}
+#progress-bar{
+    height: 4px;
+}
+/* end max-width: 768px; */
+.navbar-close-btn{
+    width: 16px;
+    right: 26px;
+    top: 24px;
+}
+.navbar-collapse{
+    padding: 16px;
+}
+.teacher .btn-icon img{
+    top: 10px;
+}
+.sign-in .profile-form, .sign-up .profile-form {
+    box-shadow: none;
+}
+td::before{
+    top: 24px !important;
+}
+.dashboard .dash-icon{
+    position: fixed !important;
+    left: 0px;
+}
+.chart{
+    width: 100%;
+}
+.trouble-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* line-height: 35px;
+    text-align: center; */
+}
+.contact-box .trouble-text{
+    font-size: 18px;
+    font-weight: 500;
+}
+.sidebar-close-btn {
+    top: 0px;
+}
+.tch-dash .col-12:has( .sidebar) {
+    max-width: 300px;
+    transition: transform 2s ease;
+    position: fixed;
+    z-index: 100;
+    padding: 0;
+    left: -300px;
+    top: 0;
+    background-color: var(--white-color);
+    padding-top: 16px;
+    padding-bottom: 40px;
+}
+.sidebar{
+    /*
+        padding-top: 16px;
+        padding-bottom: 40px;
+        min-height: 100vh;
+        background-color: var(--white-color);
+    */
+}

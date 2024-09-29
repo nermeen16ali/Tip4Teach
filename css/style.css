@@ -29,6 +29,17 @@ body{
 body.hide{
     overflow-y: hidden;
 }
+body:has( .navbar-collapse.show)::before{
+    content: " ";
+    position: absolute;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, .6);
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    height: 1000000000px;
+}
 a{
     text-decoration: none;
 }
@@ -78,6 +89,7 @@ li{
     right: 0px;
     top: 0px;
     transition: all 0.3s;
+    overflow: hidden;
 }
   .name-descripeion {
     position: relative;
@@ -114,11 +126,24 @@ li{
     .btn-icon img{
         transform: scale(1.5);
     }
-  }
-
+}
 .hero-section {
     padding-top: 52px;
     background-color: var(--section-color);
+}
+.new_hero::before, .donates::before {
+    position: absolute;
+    content: " ";
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.new_hero {
+    background-image: url(../img/home_img.jpg);
+    background-size: cover;
+    position: relative;
 }
 .hero-imgs{
     display: flex;
@@ -127,26 +152,27 @@ li{
 .blue-circle{
     bottom: 0; 
 }
-.hero-img{
-    margin-right: 50px;
-    z-index: 10;
+.hero_text {
+    max-width: 570px;
+    padding-bottom: 120px;
+    color: var(--white-color);
+    position: relative;
+    z-index: 9;
 }
-.hero-text h2{
-    color: var(--green-color);
-    font-size: 38px;
-    margin-bottom: 20px;
+.hero_text h2 {
+    font-size: 72px;
     font-weight: 700;
+    line-height: 1;
 }
-.hero-text p{
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 27.29px;
-    letter-spacing: 0.05em;
-    text-align: justify;
-    margin-bottom: 20px;
+.hero_text p {
+    margin-top: 32px;
 }
-.hero-text .main-btn{
-    font-size: 16px;
+.hero_text .banner {
+    margin-inline: auto;
+    margin-top: 32px;
+}
+.hero_text .banner a {
+    padding-inline: 52px !important;
 }
 nav{
     background-color: var(--white-color);
@@ -252,8 +278,30 @@ footer h4{
     font-size: 20px;
     margin-bottom: 20px;
 }
-.socials img{
-    margin-right: 8px;
+.socials{
+    display: flex;
+    gap: 12px;
+}
+.socials a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 49px;
+    height: 49px;
+    border-radius: 34px;
+    background-color: rgba(255, 255, 255, 0.06);
+    transition: background-color 0.2s ease-in-out;
+}
+.socials a:hover{
+    background-color: var(--yellow-color);
+}
+.socials a img{
+    width: 24px;
+}
+.footer_text {
+    font-size: 15px;
+    margin-bottom: 12px;
+    margin-right: 32px;
 }
 footer h3{
     font-size: 24px;
@@ -512,16 +560,11 @@ footer ul li a:hover{
     background-color: #B7AEAE12;
     box-shadow: 0px 3.500000238418579px 5.500000476837158px 0px #00000005;
 }
-.sidebar ul li a.active .sidebar-img:not(.home-icon),
-.sidebar ul li a:hover .sidebar-img:not(.home-icon){
-    background-color: transparent;
+.sidebar ul li a.active .sidebar-img svg path{
+    fill: var(--white-color);
 }
-.sidebar ul li .sidebar-img.home-icon{
+.sidebar ul li a.active .sidebar-img{
     background-color: var(--dark-green-color);
-}
-.sidebar ul li a.active span,
-.sidebar ul li a:hover span{
-    color: #2D3748;
 }
 .contact-box{
     background-color: var(--dark-green-color);
@@ -538,7 +581,8 @@ footer ul li a:hover{
     border-radius: 12px;
     width: 35px;
     height: 35px;
-    line-height: 35px;
+    line-height: 35px !important;
+    text-align: center;
     margin-right: 8px;
 }
 .contact-box .trouble-text{
@@ -1051,9 +1095,10 @@ table td:has( .inprogress){
 }
 .copyright{
     font-size: 20px;
-    img{
-        width: 20px;
-    }
+}
+.copyright img {
+    width: 20px;
+    margin-right: 3px;
 }
 .section-title{
     margin-bottom: 40px;
@@ -1288,6 +1333,50 @@ table td:has( .inprogress){
 .navbar .butn{
     border: 0;
 }
+.donates {
+    background-color: #f1ca38cc;
+    background-image: url(../img/donation_bg.jpeg);
+    color: var(--white-color);
+    padding-top: 54px;
+    padding-bottom: 73px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+}
+.right_shadow {
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.left_shadow {
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.donate_lamp {
+    bottom: 40px;
+    right: 20%;
+    width: 100px;
+}
+.light_light {
+    left: -200px;
+    top: 130px;
+}
+.donates h4 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-top: 32px;
+    color: var(--yellow-color);
+}
+.donates p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 12px;
+}
 /* Break Points (( Media Quieries)) */
 @media (max-width:767px) {
     .inform, .save-payment, .return, .earnings span, .text-14, .tip-total, .after-topup div span{
@@ -1435,6 +1524,9 @@ table td:has( .inprogress){
         width: 15px;
         margin-bottom: 5px;
     }
+    .hero_text h2{
+        font-size: 32px;
+    }
 }
 @media (min-width:539px) and (max-width:991px) {
     .chart-dates .bar {
@@ -1467,45 +1559,54 @@ table td:has( .inprogress){
     }
 }
 @media (max-width:991px) {
+    .navbar{
+        padding: 0;
+    }
+    .navbar-brand img {
+        width: 84px;
+    }
+    .navbar-light .navbar-toggler{
+        padding: 0;
+    }
     .page-nav .nav-item{
         width: 100%;
         margin-bottom: 10px;
         margin-right: 0;
         padding: 10px 0;
-        .nav-link{
-            width: fit-content;
-        }
+        text-align: center;
+    }
+    .page-nav .nav-item .nav-link{
+        width: fit-content;
     }
     .navbar-collapse .log-btn{
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50%;
-        bottom: 10vh;
+        width: fit-content;
+        margin-inline: auto;
     }
     .navbar-collapse{
         background-color: var(--white-color);
         z-index: 1000;
         padding: 20px;
         position: absolute;
-        left: 0;
+        /* max-width: 270px; */
+        right: 0;
         top: 0;
         width: 100%;
         height: 100vh;
     }
     .navbar-nav{
-        margin-top: 20vh;
+        margin-top: 7vh;
     }
     .page-nav .nav-link{
         margin: auto;
+        font-weight: 900;
     }
     .nav-link.active::after {
         height: 1px;
     }
-    .sm-nav-logo {
+    /* .sm-nav-logo {
         position: absolute;
         left: 40px;
-    }
+    } */
     .navbar-close-btn {
         width: 20px;
         right: 40px;
@@ -1526,7 +1627,6 @@ table td:has( .inprogress){
     }
     .payments img,
     .socials img{
-        margin-right: 10px;
         width: 30px;
     }
     .navbar-nav{
